@@ -1,11 +1,16 @@
-import React from "react";
-
-export default function Theme() {
+interface ThemeProps {
+  onToggle: () => void;
+}
+export default function Theme({ onToggle }: ThemeProps) {
   return (
     <div>
       {/* From Uiverse.io by Galahhad */}
       <label className="theme-switch">
-        <input type="checkbox" className="theme-switch__checkbox" />
+        <input
+          type="checkbox"
+          className="theme-switch__checkbox"
+          onChange={onToggle}
+        />
         <div className="theme-switch__container">
           <div className="theme-switch__clouds"></div>
           <div className="theme-switch__stars-container">

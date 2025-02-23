@@ -300,3 +300,21 @@
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
+
+.light-mode {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.dark-mode {
+  background-color: black;
+  color: lightgray;
+}
+
+.dark-mode img {
+  filter: brightness(0.7);
+}
+
+.dark-mode button {
+  background-color: #333333;
+}

@@ -3,18 +3,32 @@ import homeGif from "../../assets/svg/Animation-claud-sun.gif";
 import Button from "../../shared/button/Button";
 import { ROUTE } from "../../routes/Route";
 import Theme from "../theme/Theme";
+import { useEffect, useState } from "react";
 
 export default function Home() {
   const navigate = useNavigate();
+  const [isDarkMode, setIsDarkMode] = useState(
+    JSON.parse(localStorage.getItem("isDarkMode") ?? "false")
+  );
+
+  useEffect(() => {
+    localStorage.setItem("isDarkMode", JSON.stringify(isDarkMode));
+  }, [isDarkMode]);
+
+  function toggleTheme() {
+    setIsDarkMode((prev: boolean) => !prev);
+  }
+
   function btnHandler() {
     navigate(ROUTE.signUpSignIn);
   }
   return (
     <div
-      className="home-container grid grid-cols-3 p-4 h-screen
-    "
+      className={`home-container grid grid-cols-3 p-4 h-screen ${
+        isDarkMode ? "dark-mode" : "light-mode"
+      }`}
     >
-      <Theme />
+      <Theme onToggle={toggleTheme} />
       <div className=" flex flex-col justify-between items-center py-6">
         <div className="flex flex-col items-center justify-center">
           <img src={homeGif} alt="weather_animation" />
