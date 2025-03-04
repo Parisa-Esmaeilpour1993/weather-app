@@ -1,13 +1,4 @@
-import { IconButton, Input } from "@chakra-ui/react";
 import { useContext } from "react";
-import {
-  FaEye,
-  FaEyeSlash,
-  FaFacebookF,
-  FaLinkedin,
-  FaTwitter,
-} from "react-icons/fa";
-import { SiGmail } from "react-icons/si";
 import registerImg from "../../assets/svg/undraw_maker-launch.svg";
 import signInImg from "../../assets/svg/undraw_remotely.svg";
 import { AuthContext } from "../../context/AuthContext";
