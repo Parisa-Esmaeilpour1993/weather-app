@@ -5,12 +5,19 @@ import { BrowserRouter } from "react-router";
 import App from "./App.tsx";
 import "./index.css";
 import { ToastContainer } from "react-toastify";
+import { WeatherProvider } from "./context/Context.tsx";
+import { AuthProvider } from "./context/AuthContext.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <BrowserRouter>
       <ChakraProvider>
-        <App />
+        <AuthProvider>
+          <WeatherProvider>
+            <App />
+          </WeatherProvider>
+        </AuthProvider>
+
         <ToastContainer />
       </ChakraProvider>
     </BrowserRouter>
