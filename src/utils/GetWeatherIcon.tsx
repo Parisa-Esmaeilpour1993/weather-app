@@ -9,9 +9,9 @@ import {
 
 export default function GetWeatherIcon(description: string) {
   if (description.includes("clear"))
-    return <WiDaySunny className="text-yellow-400 text-5xl" />;
+    return <WiDaySunny className="text-yellow-500 text-5xl" />;
   if (description.includes("clouds"))
-    return <WiCloudy className="text-gray-400 text-5xl" />;
+    return <WiCloudy className="text-gray-500 text-5xl" />;
   if (description.includes("rain"))
     return <WiRain className="text-blue-500 text-5xl" />;
   if (description.includes("snow"))

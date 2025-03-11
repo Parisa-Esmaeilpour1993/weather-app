@@ -1,14 +1,8 @@
 import { IconButton, Input } from "@chakra-ui/react";
 import { useContext } from "react";
-import {
-  FaEye,
-  FaEyeSlash,
-  FaFacebookF,
-  FaLinkedin,
-  FaTwitter,
-} from "react-icons/fa";
-import { SiGmail } from "react-icons/si";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { AuthContext } from "../../context/AuthContext";
+import SocialLinks from "../../utils/SocialLinks";
 
 export default function SignInForm() {
   const auth = useContext(AuthContext);
@@ -80,32 +74,7 @@ export default function SignInForm() {
         Sign in
       </button>
       <p className="py-4">Or Sign in with social platforms</p>
-      <div className="flex gap-3 items-center justify-center">
-        <a
-          href="#"
-          className="flex justify-center items-center p-2 border-2 border-black rounded-full hover:border-blue-500 hover:text-blue-500"
-        >
-          <FaFacebookF />
-        </a>
-        <a
-          href="#"
-          className="flex justify-center items-center p-2 border-2 border-black rounded-full hover:border-blue-500 hover:text-blue-500"
-        >
-          <FaTwitter />
-        </a>
-        <a
-          href="#"
-          className="flex justify-center items-center p-2 border-2 border-black rounded-full hover:border-blue-500 hover:text-blue-500"
-        >
-          <SiGmail />
-        </a>
-        <a
-          href="#"
-          className="flex justify-center items-center p-2 border-2 border-black rounded-full hover:border-blue-500 hover:text-blue-500"
-        >
-          <FaLinkedin />
-        </a>
-      </div>
+      <SocialLinks />
     </div>
   );
 }
