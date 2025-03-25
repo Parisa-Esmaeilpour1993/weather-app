@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .home-container {
-  background-image: url("../src/assets/svg/Night\ Sky.jpeg");
+  background-image: url("../src/assets/svg/NightSky.jpeg");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
