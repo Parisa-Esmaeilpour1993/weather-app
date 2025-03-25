@@ -107,6 +107,7 @@ export const WeatherProvider: React.FC<{ children: React.ReactNode }> = ({
   function removeFavorite(cityName: string) {
     const updatedFavorites = favorites.filter((fav) => fav.name !== cityName);
     setFavorites(updatedFavorites);
+    localStorage.setItem("favoriteCities", JSON.stringify(updatedFavorites));
   }
   return (
     <WeatherContext.Provider

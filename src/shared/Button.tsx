@@ -9,9 +9,10 @@ export default function Button({
   type,
   onClick,
   className,
+  ...props
 }: ButtonProps) {
   return (
-    <button type={type} onClick={onClick} className={className}>
+    <button type={type} onClick={onClick} className={className} {...props}>
       {children}
     </button>
   );
