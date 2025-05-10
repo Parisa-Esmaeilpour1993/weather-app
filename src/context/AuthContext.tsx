@@ -2,6 +2,7 @@ import React, { createContext, useState } from "react";
 import { base_Url } from "../constant/Constants";
 import { toast } from "react-toastify";
 import ValidateInput from "../utils/ValidateInput";
+import { useNavigate } from "react-router";
 
 interface User {
   username: string;
@@ -43,6 +44,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
   const [error, setError] = useState<string | null>(null);
   const [showPassword, setShowPassword] = useState(false);
   const [focusedInput, setFocusedInput] = useState<string | null>(null);
+  const navigate = useNavigate();
 
   async function handleLogin() {
     if (!username || !password) {
@@ -59,7 +61,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
 
       if (user) {
         toast.success("Login successful");
-        window.location.href = "/showWeather";
+        navigate("/showWeather");
       } else {
         setLoginError("Invalid username or password");
       }
